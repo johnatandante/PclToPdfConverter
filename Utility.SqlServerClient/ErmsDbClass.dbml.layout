@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ErmsDbClass">
+  <DataContextMoniker Name="/ErmsDbClassDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6ac088fa-c5b6-41a4-9582-c623a62a5c07" isExpanded="false" absoluteBounds="2.125, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/ErmsDbClassDataContext/V_PDF_FROM_PCL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6c299c92-055c-4bf3-96d2-2736b3e8cb6c" absoluteBounds="2.1399999999999997, 1.21, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="06080a68-0f96-4810-bf3b-1df98f61bf64" absoluteBounds="2.25, 2.25, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/ErmsDbClassDataContext/PDF_FROM_PCL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b91af6b3-9e03-44df-b46a-265a35994ca4" absoluteBounds="2.2649999999999997, 2.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

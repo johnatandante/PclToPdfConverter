@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="EMRS" Class="ErmsDbClassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=H2014EUL0499A;Initial Catalog=EMRS;Integrated Security=True" SettingsObjectName="Utility.ErmsSqlServerClient.Properties.Settings" SettingsPropertyName="EMRSConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.V_PDF_FROM_PCL" Member="V_PDF_FROM_PCLs">
+    <Type Name="V_PDF_FROM_PCL">
+      <Column Name="folder_PCL" Type="System.String" DbType="VarChar(6000) NOT NULL" CanBeNull="false" />
+      <Column Name="PCLFilename" Type="System.String" DbType="VarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="UID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="tipo_contr_ide" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="conv_ide" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scheda_ide" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="progr_scheda_ide" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cod_comp" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="UIDFascicoloInformativo" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DATECREATED" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ISOFFLINE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CLASSID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="StreamID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Extension" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="VirtualFolder" Type="System.String" DbType="VarChar(6000) NOT NULL" CanBeNull="false" />
+      <Column Name="Filename" Type="System.String" DbType="VarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="ReferenceID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="StartPage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EndPage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Num_Doc" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="TLE_IDENTIFICATIVO" Type="System.String" DbType="VarChar(322)" CanBeNull="true" />
+      <Column Name="Recipient" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FullDescription" Type="System.String" DbType="VarChar(4096)" CanBeNull="true" />
+      <Column Name="CodComp" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoCtr" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodRamo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumCtr" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="CMOD.PDF_FROM_PCL" Member="PDF_FROM_PCLs">
+    <Type Name="PDF_FROM_PCL">
+      <Column Name="volume" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="filename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="esito" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="PCL_Filename" Type="System.String" DbType="VarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="Extension" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="UID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="StartPage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EndPage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

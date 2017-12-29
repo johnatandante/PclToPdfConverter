@@ -1,0 +1,103 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMLight", "MVVMLight\MVVMLight.csproj", "{851AA3FE-B58D-471F-B0FC-56926B4A515B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility.SwiftView", "Utility.SwiftView\Utility.SwiftView.csproj", "{2489A320-A69A-4AAA-B341-37B09D89C429}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility.ErmsSqlServerClient", "Utility.SqlServerClient\Utility.ErmsSqlServerClient.csproj", "{0CC13B73-D105-4723-9F48-45F7B0285CF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PclToPdf", "PclToPdf\PclToPdf.csproj", "{CC994E11-900F-4BF3-9523-291BAD32476B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility.Log", "Utility.Log\Utility.Log.csproj", "{1F86999B-52B9-4FDE-82E3-A1A87018E5A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PclToPdf.Config", "PclToPdf.Config\PclToPdf.Config.csproj", "{BEFA8E2A-3FAC-4813-9F72-043E68DE91CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PclToPdf.Interfaces", "PclToPdf.Interfaces\PclToPdf.Interfaces.csproj", "{5934CE8A-D377-408D-AC8D-86735D960B76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PclToPdf.Model", "PclToPdf.Model\PclToPdf.Model.csproj", "{5AF4866A-DF34-4EFE-8669-5C541842C1D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.Components", "UI.Components\UI.Components.csproj", "{561D75CC-E01A-4235-B716-2B712426FF1A}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 10
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://bretfsas2s01.azgroup.itad.corpnet/tfs/almallianz
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MVVMLight\\MVVMLight.csproj
+		SccProjectName1 = MVVMLight
+		SccLocalPath1 = MVVMLight
+		SccProjectUniqueName2 = Utility.SwiftView\\Utility.SwiftView.csproj
+		SccProjectName2 = Utility.SwiftView
+		SccLocalPath2 = Utility.SwiftView
+		SccProjectUniqueName3 = PclToPdf\\PclToPdf.csproj
+		SccProjectName3 = PclToPdf
+		SccLocalPath3 = PclToPdf
+		SccProjectUniqueName4 = Utility.SqlServerClient\\Utility.ErmsSqlServerClient.csproj
+		SccProjectName4 = Utility.SqlServerClient
+		SccLocalPath4 = Utility.SqlServerClient
+		SccProjectUniqueName5 = Utility.Log\\Utility.Log.csproj
+		SccProjectName5 = Utility.Log
+		SccLocalPath5 = Utility.Log
+		SccProjectUniqueName6 = PclToPdf.Config\\PclToPdf.Config.csproj
+		SccProjectName6 = PclToPdf.Config
+		SccLocalPath6 = PclToPdf.Config
+		SccProjectUniqueName7 = PclToPdf.Interfaces\\PclToPdf.Interfaces.csproj
+		SccProjectName7 = PclToPdf.Interfaces
+		SccLocalPath7 = PclToPdf.Interfaces
+		SccProjectUniqueName8 = PclToPdf.Model\\PclToPdf.Model.csproj
+		SccProjectName8 = PclToPdf.Model
+		SccLocalPath8 = PclToPdf.Model
+		SccProjectUniqueName9 = UI.Components\\UI.Components.csproj
+		SccProjectName9 = UI.Components
+		SccLocalPath9 = UI.Components
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{851AA3FE-B58D-471F-B0FC-56926B4A515B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{851AA3FE-B58D-471F-B0FC-56926B4A515B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{851AA3FE-B58D-471F-B0FC-56926B4A515B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{851AA3FE-B58D-471F-B0FC-56926B4A515B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2489A320-A69A-4AAA-B341-37B09D89C429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2489A320-A69A-4AAA-B341-37B09D89C429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2489A320-A69A-4AAA-B341-37B09D89C429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2489A320-A69A-4AAA-B341-37B09D89C429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CC13B73-D105-4723-9F48-45F7B0285CF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CC13B73-D105-4723-9F48-45F7B0285CF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CC13B73-D105-4723-9F48-45F7B0285CF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CC13B73-D105-4723-9F48-45F7B0285CF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC994E11-900F-4BF3-9523-291BAD32476B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC994E11-900F-4BF3-9523-291BAD32476B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC994E11-900F-4BF3-9523-291BAD32476B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC994E11-900F-4BF3-9523-291BAD32476B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F86999B-52B9-4FDE-82E3-A1A87018E5A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F86999B-52B9-4FDE-82E3-A1A87018E5A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F86999B-52B9-4FDE-82E3-A1A87018E5A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F86999B-52B9-4FDE-82E3-A1A87018E5A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEFA8E2A-3FAC-4813-9F72-043E68DE91CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEFA8E2A-3FAC-4813-9F72-043E68DE91CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEFA8E2A-3FAC-4813-9F72-043E68DE91CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEFA8E2A-3FAC-4813-9F72-043E68DE91CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5934CE8A-D377-408D-AC8D-86735D960B76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5934CE8A-D377-408D-AC8D-86735D960B76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5934CE8A-D377-408D-AC8D-86735D960B76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5934CE8A-D377-408D-AC8D-86735D960B76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AF4866A-DF34-4EFE-8669-5C541842C1D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AF4866A-DF34-4EFE-8669-5C541842C1D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AF4866A-DF34-4EFE-8669-5C541842C1D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AF4866A-DF34-4EFE-8669-5C541842C1D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{561D75CC-E01A-4235-B716-2B712426FF1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{561D75CC-E01A-4235-B716-2B712426FF1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{561D75CC-E01A-4235-B716-2B712426FF1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{561D75CC-E01A-4235-B716-2B712426FF1A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

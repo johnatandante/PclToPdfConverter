@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5AF4866A-DF34-4EFE-8669-5C541842C1D6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PclToPdf.Model</RootNamespace>
+    <AssemblyName>PclToPdf.Model</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\FilePclFinder.cs" />
+    <Compile Include="Business\FilePclToPdfReader.cs" />
+    <Compile Include="Business\ItemReadEventArgs.cs" />
+    <Compile Include="Business\PclToPdfDbReader.cs" />
+    <Compile Include="Business\PclToPdfFileWriter.cs" />
+    <Compile Include="DataItem\FilePclInfo.cs" />
+    <Compile Include="DataItem\PclToPdfFileInfo.cs" />
+    <Compile Include="DataItem\PdfFromPclFileInfo.cs" />
+    <Compile Include="DataItem\SortByRecord.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PclToPdf.Config\PclToPdf.Config.csproj">
+      <Project>{befa8e2a-3fac-4813-9f72-043e68de91ce}</Project>
+      <Name>PclToPdf.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PclToPdf.Interfaces\PclToPdf.Interfaces.csproj">
+      <Project>{5934ce8a-d377-408d-ac8d-86735d960b76}</Project>
+      <Name>PclToPdf.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility.Log\Utility.Log.csproj">
+      <Project>{1f86999b-52b9-4fde-82e3-a1a87018e5a2}</Project>
+      <Name>Utility.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility.SqlServerClient\Utility.ErmsSqlServerClient.csproj">
+      <Project>{0cc13b73-d105-4723-9f48-45f7b0285cf4}</Project>
+      <Name>Utility.ErmsSqlServerClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility.SwiftView\Utility.SwiftView.csproj">
+      <Project>{2489a320-a69a-4aaa-b341-37b09d89c429}</Project>
+      <Name>Utility.SwiftView</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

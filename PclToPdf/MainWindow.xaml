@@ -1,0 +1,277 @@
+﻿<Window x:Class="PclToPdf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:my="clr-namespace:PclToPdf.ViewModel"  
+        xmlns:ui="clr-namespace:UI.Components;assembly=UI.Components"
+        xmlns:local="clr-namespace:PclToPdf.DataItem"
+        Title="MainWindow" 
+        MinHeight="650" MinWidth="525"
+        mc:Ignorable="d"
+        d:DesignWidth="650"  d:DesignHeight="525">
+    <Grid>
+        <Grid.Resources>
+            <my:PclToPdfViewModel x:Key="model"/>
+        </Grid.Resources>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="2">
+            <Button Width="70" Margin="4,2" ToolTip="New project" Command="{Binding Source={StaticResource model}, Path=NewProjectCommand}">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/document-new-3.png"/>
+                </Button.Background>
+            </Button>
+            <Button  Width="70" Margin="4,2" ToolTip="Load project" Command="{Binding Source={StaticResource model}, Path=LoadProjectCommand}">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/document-open-5.png"/>
+                </Button.Background>
+            </Button>
+            <Button  Width="70" Margin="4,2" ToolTip="Save project" Command="{Binding Source={StaticResource model}, Path=SaveProjectCommand}">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/document-save-5.png"/>
+                </Button.Background>
+            </Button>
+        </StackPanel>
+
+        <Grid Grid.Column="1" Margin="6">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition MinWidth="110" />
+            </Grid.ColumnDefinitions>
+            <!--Label FontWeight="Bold" Content="Project Created" />
+            <TextBlock Grid.Column="1" Text="-Project Created-" /-->
+            <Label Grid.Row="1" FontWeight="Bold" Content="Project Last Modified" />
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Source={StaticResource model}, Path=LastModified}" 
+                       VerticalAlignment="Center" TextAlignment="Right"/>
+            <Label Grid.Row="2" FontWeight="Bold" Content="Pcl Done" />
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Source={StaticResource model}, Path=PclDone}" 
+                       TextAlignment="Right"/>
+            <Label Grid.Row="3" FontWeight="Bold" Content="Pcl To Do" />
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Source={StaticResource model}, Path=PclToDo}" 
+                       TextAlignment="Right"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="9" Margin="24">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" MinHeight="196"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" MinHeight="25"/>
+                <RowDefinition Height="*" MaxHeight="125" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Cartella di lavoro-->
+            <!--mycontrols:WorkSpaceControl  Margin="6" WorkingDir="{Binding Source={StaticResource model}, Path=WorkingDir, Mode=TwoWay}" /-->
+            <Grid Margin="6" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Content="Workspace Pcl" Margin="6,0,6,0" FontWeight="Bold" />
+                <TextBox Grid.Row="1" Margin="6,0,6,0" Text="{Binding Source={StaticResource model}, Path=SourcePclDir, Mode=TwoWay}" />
+
+                <Label Content="Workspace Pdf" Grid.Column="1" Margin="6,0,6,0" FontWeight="Bold" />
+                <TextBox Grid.Row="1" Grid.Column="1" Margin="6,0,6,0" Text="{Binding Source={StaticResource model}, Path=PdfDir, Mode=TwoWay}" />
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid Margin="6">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!-- Toolbar -->
+                    <Grid Margin="6,0,6,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Content="Volume" FontWeight="Bold" />
+                        <ComboBox Grid.Column="1" Margin="6,2,6,2"
+                                  SelectedItem="{Binding Source={StaticResource model}, Path=VolumeSelected}"                                   
+                                  ItemsSource="{Binding Source={StaticResource model}, Path=Volumes}"/>
+                        <StackPanel Grid.Row="1" Orientation="Horizontal">
+                            <Label  Content="Todos Only" FontWeight="Bold"/>
+                            <CheckBox Margin="6,0,6,0" VerticalAlignment="Center"
+                                  IsChecked="{Binding Source={StaticResource model}, Path=ShowOnlyPclToDo}"/>
+                        </StackPanel>
+                        <CheckBox Grid.Row="1" Grid.Column="1" Margin="6,0,6,0" VerticalAlignment="Center" HorizontalAlignment="Left"
+                                  Content="Has Pdf Only" FontWeight="Bold"
+                                  IsChecked="{Binding Source={StaticResource model}, Path=ShowOnlyPclWithPdf}" />
+                        <StackPanel Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="9" Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Button Content="Clear" Margin="6,0,3,0" MinWidth="40"
+                                    Command="{Binding Source={StaticResource model}, Path=ClearSelectedCommand}"/>
+                            <Button Content="Toggle" Margin="3,0,6,0" MinWidth="40"
+                                    Command="{Binding Source={StaticResource model}, Path=ToggleSelectedCommand}"/>
+                        </StackPanel>
+                    </Grid>
+                    <ui:DataGridListView Grid.Row="1" Margin="6"
+                                         SelectedItem="{Binding Source={StaticResource model}, Path=SelectedFilePcl}"
+                                           ItemsSource="{Binding Source={StaticResource model}, Path=FilePclList}"
+                                         VisibleItems="{Binding Source={StaticResource model}, Path=VisibleItems, Mode=OneWayToSource}">
+                        <ui:DataGridListView.Columns>
+                            <GridViewColumn Header="">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox Margin="6" IsChecked="{Binding ToDo}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Fatto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox Margin="6" IsChecked="{Binding Done}" IsEnabled="False" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Quanti"  DisplayMemberBinding="{Binding Quanti}" />
+                            <GridViewColumn Header="Volume"  DisplayMemberBinding="{Binding Volume}" />
+                            <GridViewColumn Header="Filename"  DisplayMemberBinding="{Binding Filename}" />
+                        </ui:DataGridListView.Columns>
+                    </ui:DataGridListView>
+                    <Grid Grid.Row="2" Margin="6,0,6,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                            <Button ToolTip="Aggiorna" Height="32" Width="32" 
+                            Command="{Binding Source={StaticResource model}, Path=LoadFilePclListCommand}">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="Resources/zoom-2.png"/>
+                                </Button.Background>
+                            </Button>
+                            <Button  Height="32" Width="32" ToolTip="Esporta" Margin="6,0"
+                                Command="{Binding Source={StaticResource model}, Path=EsportaPclCommand}" >
+                                <Button.Background>
+                                    <ImageBrush ImageSource="Resources/document-import.png"/>
+                                </Button.Background>
+                            </Button>
+                        </StackPanel>
+
+                        <Button Grid.Column="2" Height="32" Width="32"  HorizontalAlignment="Right"
+                            ToolTip="Accoda Selezionate"
+                            Command="{Binding Source={StaticResource model}, Path=AccodaPdfDaGenerareCommand}">
+                            <Button.Background>
+                                <ImageBrush ImageSource="Resources/tab-new.png"/>
+                            </Button.Background>
+                        </Button>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Column="1" Margin="6,6,6,6">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!-- Toolbar -->
+                    <Grid Margin="6,0,6,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label  Content="SortBy" FontWeight="Bold"/>
+                        <ComboBox Grid.Column="1" Margin="6,2,6,2"
+                                  ItemsSource="{Binding Source={StaticResource model}, Path=SortList}" SelectedItem="{Binding Source={StaticResource model}, Path=SortItemMode}"/>
+                        <Label Grid.Row="1" Content="To Do Only" FontWeight="Bold"/>
+                        <CheckBox Grid.Row="1" Grid.Column="1" Margin="6,0,6,0" VerticalAlignment="Center"
+                                  IsChecked="{Binding Source={StaticResource model}, Path=ShowOnlyPdfToDo}" />
+                        <CheckBox Grid.Row="1" Grid.Column="1" Margin="6,0,6,0" VerticalAlignment="Center" HorizontalAlignment="Right"
+                                  Content="Has Pages Only" FontWeight="Bold"
+                                  IsChecked="{Binding Source={StaticResource model}, Path=ShowOnlyPdfWithPages}" />
+                    </Grid>
+                    <ui:DataGridListView Grid.Row="1" Margin="6" 
+                                           ItemsSource="{Binding Source={StaticResource model}, Path=FileList}" >
+                        <ui:DataGridListView.Columns>
+                            <GridViewColumn Header="">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Margin="2" Content="Get!" VerticalAlignment="Center" IsEnabled="{Binding Done}"
+                                                Command="{Binding Source={StaticResource model}, Path=GetPdfCommand}" CommandParameter="{Binding}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding Done}" IsEnabled="False"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Pages"  DisplayMemberBinding="{Binding Pages}" />
+                            <GridViewColumn Header="Pdf"  DisplayMemberBinding="{Binding PdfFileName}" />
+                        </ui:DataGridListView.Columns>
+                    </ui:DataGridListView>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Margin="6,0">
+                        <Button ToolTip="Clear" Height="32" Width="32"
+                                        Command="{Binding Source={StaticResource model}, Path=ClearPdfListCommand}" >
+                            <Button.Background>
+                                <ImageBrush ImageSource="Resources/edit-clear-2.png"/>
+                            </Button.Background>
+                        </Button>
+                        <Button  Height="32" Width="32" ToolTip="Esporta" Margin="6,0"
+                                Command="{Binding Source={StaticResource model}, Path=EsportaPdfCommand}" >
+                            <Button.Background>
+                                <ImageBrush ImageSource="Resources/document-import.png"/>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right">
+                        <Button ToolTip="Copy" Height="32" Width="32" Margin="3,0,6,0"
+                                        Command="{Binding Source={StaticResource model}, Path=ElaboraPdfCommand}" >
+                            <Button.Background>
+                                <ImageBrush ImageSource="Resources/tab-duplicate.png"/>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+
+            <ProgressBar Grid.Row="3" Margin="6,2,6,2" Value="{Binding Source={StaticResource model}, Path=ProgressValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Minimum="0" Maximum="100" />
+            <TextBox Grid.Row="4" Margin="6" IsReadOnly="True" Text="{Binding Source={StaticResource model}, Path=LogMessages}" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Auto" />
+
+        </Grid>
+    </Grid>
+</Window>
+
